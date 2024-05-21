@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Easy HTTP Post</title>
+    <script src="scripts/post-plugin.js"></script>
+</head>
+
+<body>
+    <div class="pannel request">
+        <div>
+            <select name="method">
+                <option>POST</option>
+                <option>GET</option>
+            </select>
+            <input name="url" class="url" placeholder="请输入请求地址" />
+            <button name="post-button">发送</button>
+        </div>
+        <div>
+            <label><input type="radio" name="dataType" value="application/x-www-form-urlencoded" checked/>application/x-www-form-urlencoded</label>
+            <label><input type="radio" name="dataType"  value="application/json"/>application/json</label>
+        </div>
+        <div>
+            <textarea class="header" name="headers" placeholder="请输入自定义header参数,多个以回车换行符分割"></textarea>
+        </div>
+        <div>
+            <label><input type="radio" name="convertType" value="" checked/>none</label>
+            <label><input type="radio" name="convertType" value="urlencoded"/>to x-www-form-urlencoded</label>
+            <label><input type="radio" name="convertType"  value="json"/>to json</label>
+        </div>
+        <div>
+            <textarea class="param" name="params" placeholder="请输入请求参数"></textarea>
+        </div>
+    </div>
+    <div class="pannel response">
+        <div class="blank-line"></div>
+        <div><input name="statusCode" placeholder="响应状态码"/></div>
+        <div><input name="responseDataType" placeholder="响应数据类型"/></div>
+        <div><textarea name="responseData" class="response" placeholder="响应结果数据"></textarea></div>
+    </div>
+</body>
+
+</html>

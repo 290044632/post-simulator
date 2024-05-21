@@ -1,0 +1,36 @@
+div{
+    margin: 10px;
+}
+input,button,textarea{
+    cursor: pointer;
+}
+input.url{
+    width: 300px;
+}
+textarea.header{
+    width: 400px;
+    height: 100px;
+}
+textarea.param{
+    width: 400px;
+    height: 300px;
+}
+div.pannel{
+    float: left;
+}
+div.request{
+    width: 50%;
+}
+div.response{
+    width: 40%;
+}
+textarea.response{
+    width: 400px;
+    height: 400px;
+}
+div.blank-line{
+    display: inline-block;
+}
+div.response  input{
+    width: 400px;
+}

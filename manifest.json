@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "Easy HTTP Post",
+    "description": "Extension that make HTTP requests easier",
+    "version": "1.0.0",
+    "icons": {
+        "128": "128.png"
+    },
+    "action": {
+        "default_icon": "128.png"
+    },
+    "content_security_policy": {
+        "extension_pages": "default-src 'self'; script-src 'self'; connect-src *;"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/*",
+                "http://*/*"
+            ],
+            "js": [
+                "scripts/post-plugin.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "scripting",
+        "tabs",
+        "activeTab",
+        "storage"
+    ],
+    "host_permissions": [
+        "https://*/",
+        "http://*/"
+    ],
+    "background": {
+        "service_worker": "scripts/plugin-background.js"
+    }
+}
