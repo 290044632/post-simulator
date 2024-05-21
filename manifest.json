@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Easy HTTP Post",
+    "name": "Post Simulator",
     "description": "Extension that make HTTP requests easier",
     "version": "1.0.0",
     "icons": {
