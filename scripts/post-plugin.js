@@ -9,6 +9,10 @@ window.onload = function () {
             getElementByName("responseDataType").value = target.responseType || 'text';
             getElementByName("statusCode").value = target.status + " " + target.statusText;
             getElementByName("responseData").value = target.responseText;
+        },(e)=>{
+            getElementByName("responseDataType").value="";
+            getElementByName("statusCode").value = "";
+            getElementByName("responseData").value = "";
         });
     }
 }
@@ -137,7 +141,7 @@ function line2Urlencoded(param) {
  * @param {object} config 配置信息
  * @param {Function} fn 回调函数
  */
-function ajaxSubmit(config = {}, fn) {
+function ajaxSubmit(config = {}, fn,befFn) {
     let ajaxClient = new XMLHttpRequest();
     ajaxClient.open(config.method || "GET", config.url);
     if (config.headers) {
@@ -153,6 +157,11 @@ function ajaxSubmit(config = {}, fn) {
             if (fn && typeof fn == "function") {
                 fn(target);
             }
+        }
+    }
+    ajaxClient.onloadstart=function(e){
+        if(befFn && typeof befFn == "function"){
+            befFn(e);
         }
     }
     ajaxClient.onerror = function (e) {
